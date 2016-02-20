@@ -57,6 +57,7 @@ module.exports = {
 		]
 	},
 	plugins: [
+		new webpack.optimize.OccurenceOrderPlugin(),
 		new webpack.optimize.LimitChunkCountPlugin({ maxChunks: 1 }),
 		new webpack.optimize.CommonsChunkPlugin({
 			name: 'dependencies',
