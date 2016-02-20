@@ -39,7 +39,8 @@ module.exports = assign({}, baseConfig, {
 	plugins: [
 		new webpack.HotModuleReplacementPlugin(),
 		new webpack.DefinePlugin({
-			'process.env.NODE_ENV': JSON.stringify('development')
+			'process.env.NODE_ENV': JSON.stringify('development'),
+			'API_HOST': JSON.stringify('')
 		})
 	].concat(baseConfig.plugins)
 })

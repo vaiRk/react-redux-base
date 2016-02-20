@@ -8,4 +8,4 @@ export const URLs = {
 	 */
 };
 
-export default initService(URLs);
+export default initService(URLs, API_HOST);
