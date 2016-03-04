@@ -72,7 +72,6 @@ module.exports = {
 			exclude: ['assets/js/dependencies.js'],
 			columns: false,
 			module: true
-		}),
-		new webpack.NoErrorsPlugin()
+		})
 	]
 }

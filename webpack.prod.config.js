@@ -22,6 +22,7 @@ module.exports = assign({}, baseConfig, {
                 screw_ie8: true,
                 drop_debugger: true
             }
-        })
+        }),
+        new webpack.NoErrorsPlugin()
 	].concat(baseConfig.plugins)
 })

@@ -5,6 +5,15 @@ import thunkMiddleware from 'redux-thunk';
 import createLogger from 'redux-logger';
 import rootReducer from 'reducers';
 
+if (process.env.NODE_ENV === 'development') {
+	if (!window.devToolsExtension) {
+		console.warn(
+			'You are not using Redux DevTools. Y THO!? \n' +
+			'https://github.com/zalmoxisus/redux-devtools-extension'
+		);
+	}
+}
+
 const loggerMiddleware = createLogger({
 	/**
 	 * Only log actions in dev mode.
@@ -16,7 +25,8 @@ const loggerMiddleware = createLogger({
 
 const createStoreWithMiddleware = applyMiddleware(
 	thunkMiddleware,
-	loggerMiddleware
+	loggerMiddleware,
+	window.devToolsExtension ? window.devToolsExtension() : f => f
 )(createStore);
 
 export default function configureStore(initialState) {
